@@ -1,0 +1,2 @@
+# mongorestore --host Soule-1-shard-0/soule-1-shard-00-00-zogat.mongodb.net:27017,soule-1-shard-00-01-zogat.mongodb.net:27017,soule-1-shard-00-02-zogat.mongodb.net:27017 --ssl --username noaa --password '***' --authenticationDatabase city-data
+mongoimport --host Soule-1-shard-0/soule-1-shard-00-00-zogat.mongodb.net:27017,soule-1-shard-00-01-zogat.mongodb.net:27017,soule-1-shard-00-02-zogat.mongodb.net:27017 --ssl --username noaa --password '***' --authenticationDatabase admin --db 'city-data' --collection cities --type json --file ./data/cities.json

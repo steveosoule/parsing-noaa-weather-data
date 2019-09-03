@@ -1,12 +1,9 @@
 const MongoClient = require('mongodb').MongoClient;
 
-// Connection URL
-const db_user = 'node_user';
-const db_password = '********';
-const url = `mongodb://${db_user}:${db_password}@ds157599.mlab.com:57599/city-data`;
+const config = require('../config');
 
 var connect = function(callback){
-	MongoClient.connect(url, function(err, client) {
+	MongoClient.connect(config.db_config.url, function(err, client) {
 		if( err ) {
 			throw err;
 		}
@@ -16,6 +13,6 @@ var connect = function(callback){
 
 module.exports = {
 	MongoClient: MongoClient,
-	url: url,
+	url: config.db_config.url,
 	connect: connect
 };

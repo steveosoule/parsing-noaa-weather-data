@@ -1,9 +1,8 @@
 'use strict';
 
 const fs = require('fs');
-const path = require('path');
-const config = require('../config.js');
 const mongoose = require('mongoose');
+const config = require('../config.js');
 
 var db_config = require('./db.js');
 mongoose.connect( db_config.url, { useNewUrlParser: true });
@@ -40,6 +39,7 @@ var total_count = 0,
 var file_path = config.noaa_path + 'station-inventories/allstations.txt';
 fs.readFile(file_path, 'utf8', function(err, data){
 	if (err) throw err;
+
 
 	var rows = data.split('\n').filter(r => r.length);
 	var stations = rows.map(map_stations);
